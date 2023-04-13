@@ -1,0 +1,213 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.weatherImage{
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 3px;
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute; 
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom:2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.dailyWeatherReports{
+  display: flex;
+
+}
+.dayReport{
+  flex: 1;
+  align-self: center;
+}
+
+.dailyWeatherReports:after{
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.hourlyWeatherReports{
+  display: flex;
+}
+
+.hourlyWeatherReports button{
+  height: 30%;
+  margin: auto;
+}
+
+.hourReport{
+  flex: 1;
+  align-self: center;
+}
+
+.hourReport img{
+  width:  130px;
+  height: 130px;
+  padding: 5px;
+}
+
+.hourlyWeatherReports:after{
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.mainPage{
+  display: inline-grid;
+  grid-template-columns: 120px 120px 120px;
+
+}
+
+.pageButtonDiv{
+  margin: 5px;
+}
+
+.tabsDiv{
+
+  border: 1px black;
+  width: 50%;
+  align-self: center;
+  margin: 0 auto 2rem;
+  height: 50px;
+
+}
+
+.tabsList{
+  width: 100%;
+  margin: 0 auto 2rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px black solid;
+  border-radius: 2rem;
+  background: #32bfe2;
+  padding: 5px;
+}
+
+.tabsList li{
+  width: 50%;
+  text-align: center;
+  padding: 3px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.3em;
+  font-family: inherit;
+  transition: all 0.5s;
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+.tabsList li:nth-child(2) {
+  border-radius: 0;
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.tabsList li:hover{
+  background: #e1eaec;
+
+}
+
+.tabsList li.active {
+  background: #7bdff8;
+}
