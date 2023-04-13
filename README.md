@@ -4,4 +4,4 @@ Tämä on yksinkertainen säänennustukseen tarkoitettu web-sovellus, josta pä�
 Se on luotu Viten pohjalle Reactilla ja Javascriptillä.
 Kunkin kaupungin sivu sisältää päivittäisen yleiskatsauksen sekä tuntiennusteen.
 
-Sovellus käyttää säätietoja Open Meteo api:sta.
+Sovellus käyttää säätietoja [Open Meteo api:sta](https://open-meteo.com/).
