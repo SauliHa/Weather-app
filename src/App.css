@@ -1,213 +1,198 @@
+body {
+	margin: 0;
+	font-family: "Inter", "Segoe UI", sans-serif;
+	background: linear-gradient(135deg, #dff7ff 0%, #f7fbff 100%);
+	color: #12364a;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 2rem 1.5rem 3rem;
+	text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App {
+	background: rgba(255, 255, 255, 0.85);
+	border-radius: 24px;
+	padding: 2rem;
+	box-shadow: 0 12px 40px rgba(18, 54, 74, 0.12);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.statusBox {
+	padding: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.weatherImage{
-  width: 200px;
-  height: 200px;
-  padding: 5px;
+.weatherImage {
+	width: 150px;
+	height: 150px;
+	padding: 5px;
 }
 
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 18px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-bottom: 3px;
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 18px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-bottom: 3px;
 }
 
-
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+	opacity: 0;
+	width: 0;
+	height: 0;
 }
 
 .slider {
-  position: absolute; 
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #c9dce4;
+	transition: 0.4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 3px;
-  bottom:2px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	content: "";
+	height: 16px;
+	width: 16px;
+	left: 3px;
+	bottom: 2px;
+	background-color: white;
+	transition: 0.4s;
 }
 
-
 input:checked + .slider {
-  background-color: #2196F3;
+	background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+	box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px);
+	transform: translateX(20px);
 }
 
 .slider.round {
-  border-radius: 34px;
+	border-radius: 34px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 
-.dailyWeatherReports{
-  display: flex;
-
-}
-.dayReport{
-  flex: 1;
-  align-self: center;
-}
-
-.dailyWeatherReports:after{
-  clear: both;
-  content: "";
-  display: table;
+.mainPage {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	gap: 1rem;
+	max-width: 760px;
+	margin: 0 auto;
 }
 
-.hourlyWeatherReports{
-  display: flex;
+.pageButtonDiv {
+	margin: 0;
 }
 
-.hourlyWeatherReports button{
-  height: 30%;
-  margin: auto;
+.pageButtonDiv button {
+	width: 100%;
+	border: none;
+	border-radius: 16px;
+	padding: 0.9rem 0.6rem;
+	background: #32bfe2;
+	color: white;
+	font-weight: 600;
+	cursor: pointer;
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+	box-shadow: 0 8px 18px rgba(50, 191, 226, 0.2);
 }
 
-.hourReport{
-  flex: 1;
-  align-self: center;
+.pageButtonDiv button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 22px rgba(50, 191, 226, 0.25);
 }
 
-.hourReport img{
-  width:  130px;
-  height: 130px;
-  padding: 5px;
+.cityButtonLabel {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
 }
 
-.hourlyWeatherReports:after{
-  clear: both;
-  content: "";
-  display: table;
+.dailyWeatherReports {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 1rem;
 }
 
-.mainPage{
-  display: inline-grid;
-  grid-template-columns: 120px 120px 120px;
-
+.dayReport,
+.hourReport {
+	background: #f7fbff;
+	border: 1px solid #dcecf5;
+	border-radius: 16px;
+	padding: 1rem;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-.pageButtonDiv{
-  margin: 5px;
+.hourlyWeatherReports {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	gap: 0.8rem;
+	align-items: center;
 }
 
-.tabsDiv{
-
-  border: 1px black;
-  width: 50%;
-  align-self: center;
-  margin: 0 auto 2rem;
-  height: 50px;
-
+.hourlyWeatherReports button {
+	padding: 0.7rem 0.8rem;
+	border: none;
+	border-radius: 999px;
+	background: #12364a;
+	color: white;
+	cursor: pointer;
 }
 
-.tabsList{
-  width: 100%;
-  margin: 0 auto 2rem;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px black solid;
-  border-radius: 2rem;
-  background: #32bfe2;
-  padding: 5px;
+.hourlyWeatherReports button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
-.tabsList li{
-  width: 50%;
-  text-align: center;
-  padding: 3px;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 1.3em;
-  font-family: inherit;
-  transition: all 0.5s;
-  border-bottom-left-radius: 2rem;
-  border-top-left-radius: 2rem;
-}
-.tabsList li:nth-child(2) {
-  border-radius: 0;
-  border-bottom-right-radius: 2rem;
-  border-top-right-radius: 2rem;
+.tabsDiv {
+	width: min(100%, 420px);
+	margin: 0 auto 1.5rem;
 }
 
-.tabsList li:hover{
-  background: #e1eaec;
+.tabsList {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid #dcecf5;
+	border-radius: 2rem;
+	background: #32bfe2;
+	padding: 5px;
+	margin: 0;
+}
 
+.tabsList li {
+	width: 50%;
+	text-align: center;
+	padding: 0.6rem 0.2rem;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 1rem;
+	transition: all 0.2s ease;
+	border-radius: 2rem;
+}
+
+.tabsList li:hover {
+	background: #e1eaec;
 }
 
 .tabsList li.active {
-  background: #7bdff8;
+	background: #7bdff8;
 }
